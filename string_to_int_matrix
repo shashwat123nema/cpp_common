@@ -1,0 +1,23 @@
+void input_mat(){
+    int k,l;
+    k=l=0;
+    string temp;
+    getline(cin,temp);
+    for(int i=0;temp[i]!='\0';i++){
+        if(temp[i]=='1'||temp[i]=='0'){
+            n++;
+            mat[0][l] = temp[i]-'0';
+            l++;
+        }}k++;
+       
+    for(int j=1;j<=n-1;j++){
+        getline(cin,temp);
+        l=0;
+         for(int i=0;temp[i]!='\0';i++){
+        if(temp[i]=='1'||temp[i]=='0'){
+            mat[j][l] = temp[i]-'0';
+            l++;
+        }}
+    }
+    
+}
