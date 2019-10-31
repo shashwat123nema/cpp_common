@@ -3,15 +3,13 @@ using namespace std;
 class Graph{
     int V;
     bool *visited;
-    bool complete_tree=false;
+    bool complete_tree;
     list<int> *adj;
-    void is_complete(){
-        for(auto i=0;i<=V;i++){
-            if(!(adj[i].size()==0||adj[i].size()==2)){
+    void is_complete(int i){
+            if((adj[i].size()==0||adj[i].size()==2))
+                complete_tree=true;
+            else
                 complete_tree=false;
-            }
-        }
-        complete_tree=true;
         return;
     }
     void inorder(int s){
@@ -74,7 +72,7 @@ class Graph{
     }
     void addEdge(int s,int d){
      adj[s].push_back(d); 
-     is_complete();
+     is_complete(s);
     }
     void inorder_util(int s){
         if(complete_tree==false)
